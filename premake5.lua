@@ -2,12 +2,13 @@ project "assimp"
   kind "StaticLib"
   language "C++"
   cppdialect "C++17"
-  staticruntime "on"
+  staticruntime "off"
 
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-  objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+  objdir ("imd/" .. outputdir .. "/%{prj.name}")
 
   defines {
+	"_CRT_SECURE_NO_WARNINGS",
       -- "SWIG",
       "ASSIMP_BUILD_NO_OWN_ZLIB",
 
